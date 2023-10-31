@@ -19,8 +19,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public final class PasteUtil {
-    private static final String PASTE_URL = "https://paste.gg/";
-    private static final String PASTE_UPLOAD_URL = "https://api.paste.gg/v1/pastes";
+    private static final String PASTE_URL = "https://hasteb.in/";
+    private static final String PASTE_UPLOAD_URL = "https://hasteb.in/post";
     private static final ExecutorService PASTE_EXECUTOR_SERVICE = Executors.newSingleThreadExecutor();
     private static final Gson GSON = new Gson();
 
@@ -68,12 +68,11 @@ public final class PasteUtil {
 
                 // Read URL
                 final JsonObject object = GSON.fromJson(new InputStreamReader(connection.getInputStream(), Charsets.UTF_8), JsonObject.class);
-                final String pasteId = object.get("result").getAsJsonObject().get("id").getAsString();
+                final String pasteId = object.get("key").getAsString();
                 final String pasteUrl = PASTE_URL + pasteId;
-                final JsonElement deletionKey = object.get("result").getAsJsonObject().get("deletion_key");
                 connection.disconnect();
 
-                final PasteResult result = new PasteResult(pasteId, pasteUrl, deletionKey != null ? deletionKey.getAsString() : null);
+                final PasteResult result = new PasteResult(pasteId, pasteUrl, null);
                 future.complete(result);
             } catch (Exception e) {
                 future.completeExceptionally(e);

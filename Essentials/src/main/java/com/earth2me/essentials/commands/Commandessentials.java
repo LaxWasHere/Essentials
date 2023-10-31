@@ -76,43 +76,43 @@ public class Commandessentials extends EssentialsCommand {
     private static final String[] CONSOLE_MOO = new String[] {"         (__)", "         (oo)", "   /------\\/", "  / |    ||", " *  /\\---/\\", "    ~~   ~~", "....\"Have you mooed today?\"..."};
     private static final String[] PLAYER_MOO = new String[] {"            (__)", "            (oo)", "   /------\\/", "  /  |      | |", " *  /\\---/\\", "    ~~    ~~", "....\"Have you mooed today?\"..."};
     private static final List<String> versionPlugins = Arrays.asList(
-        "Vault", // API
-        "Reserve", // API
-        "PlaceholderAPI", // API
-        "CMI", // potential for issues
-        "Towny", // past issues; admins should ensure latest
-        "ChestShop", // past issues; admins should ensure latest
-        "Citizens", // fires player events
-        "LuckPerms", // permissions (recommended)
-        "UltraPermissions",
-        "PermissionsEx", // permissions (unsupported)
-        "GroupManager", // permissions (unsupported)
-        "bPermissions", // permissions (unsupported)
-        "DiscordSRV", // potential for issues if EssentialsXDiscord is installed
+            "Vault", // API
+            "Reserve", // API
+            "PlaceholderAPI", // API
+            "CMI", // potential for issues
+            "Towny", // past issues; admins should ensure latest
+            "ChestShop", // past issues; admins should ensure latest
+            "Citizens", // fires player events
+            "LuckPerms", // permissions (recommended)
+            "UltraPermissions",
+            "PermissionsEx", // permissions (unsupported)
+            "GroupManager", // permissions (unsupported)
+            "bPermissions", // permissions (unsupported)
+            "DiscordSRV", // potential for issues if EssentialsXDiscord is installed
 
-        // Chat signing bypass plugins that can potentially break EssentialsChat
-        "AntiPopup",
-        "NoChatReports",
-        "NoEncryption"
+            // Chat signing bypass plugins that can potentially break EssentialsChat
+            "AntiPopup",
+            "NoChatReports",
+            "NoEncryption"
     );
     private static final List<String> officialPlugins = Arrays.asList(
-        "EssentialsAntiBuild",
-        "EssentialsChat",
-        "EssentialsDiscord",
-        "EssentialsDiscordLink",
-        "EssentialsGeoIP",
-        "EssentialsProtect",
-        "EssentialsSpawn",
-        "EssentialsXMPP"
+            "EssentialsAntiBuild",
+            "EssentialsChat",
+            "EssentialsDiscord",
+            "EssentialsDiscordLink",
+            "EssentialsGeoIP",
+            "EssentialsProtect",
+            "EssentialsSpawn",
+            "EssentialsXMPP"
     );
     private static final List<String> warnPlugins = Arrays.asList(
-        "PermissionsEx",
-        "GroupManager",
-        "bPermissions",
+            "PermissionsEx",
+            "GroupManager",
+            "bPermissions",
 
-        // Brain-dead chat signing bypass that break EssentialsChat
-        "NoChatReports",
-        "NoEncryption"
+            // Brain-dead chat signing bypass that break EssentialsChat
+            "NoChatReports",
+            "NoEncryption"
     );
     private transient TuneRunnable currentTune = null;
 
@@ -461,10 +461,8 @@ public class Commandessentials extends EssentialsCommand {
                 if (result != null) {
                     final String dumpUrl = "https://essentialsx.net/dump.html?id=" + result.getPasteId();
                     sender.sendTl("dumpUrl", dumpUrl);
-                    sender.sendTl("dumpDeleteKey", result.getDeletionKey());
                     if (sender.isPlayer()) {
                         ess.getLogger().info(AdventureUtil.miniToLegacy(tlLiteral("dumpConsoleUrl", dumpUrl)));
-                        ess.getLogger().info(AdventureUtil.miniToLegacy(tlLiteral("dumpDeleteKey", result.getDeletionKey())));
                     }
                 }
                 files.clear();
@@ -902,31 +900,31 @@ public class Commandessentials extends EssentialsCommand {
 
     private static class TuneRunnable extends BukkitRunnable {
         private static final Map<String, Float> noteMap = ImmutableMap.<String, Float>builder()
-            .put("1F#", 0.5f)
-            .put("1G", 0.53f)
-            .put("1G#", 0.56f)
-            .put("1A", 0.6f)
-            .put("1A#", 0.63f)
-            .put("1B", 0.67f)
-            .put("1C", 0.7f)
-            .put("1C#", 0.76f)
-            .put("1D", 0.8f)
-            .put("1D#", 0.84f)
-            .put("1E", 0.9f)
-            .put("1F", 0.94f)
-            .put("2F#", 1.0f)
-            .put("2G", 1.06f)
-            .put("2G#", 1.12f)
-            .put("2A", 1.18f)
-            .put("2A#", 1.26f)
-            .put("2B", 1.34f)
-            .put("2C", 1.42f)
-            .put("2C#", 1.5f)
-            .put("2D", 1.6f)
-            .put("2D#", 1.68f)
-            .put("2E", 1.78f)
-            .put("2F", 1.88f)
-            .build();
+                .put("1F#", 0.5f)
+                .put("1G", 0.53f)
+                .put("1G#", 0.56f)
+                .put("1A", 0.6f)
+                .put("1A#", 0.63f)
+                .put("1B", 0.67f)
+                .put("1C", 0.7f)
+                .put("1C#", 0.76f)
+                .put("1D", 0.8f)
+                .put("1D#", 0.84f)
+                .put("1E", 0.9f)
+                .put("1F", 0.94f)
+                .put("2F#", 1.0f)
+                .put("2G", 1.06f)
+                .put("2G#", 1.12f)
+                .put("2A", 1.18f)
+                .put("2A#", 1.26f)
+                .put("2B", 1.34f)
+                .put("2C", 1.42f)
+                .put("2C#", 1.5f)
+                .put("2D", 1.6f)
+                .put("2D#", 1.68f)
+                .put("2E", 1.78f)
+                .put("2F", 1.88f)
+                .build();
 
         private final String[] tune;
         private final Sound sound;
